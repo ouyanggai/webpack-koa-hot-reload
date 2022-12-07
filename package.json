@@ -1,10 +1,13 @@
 {
-  "name": "webpackkoahotreload",
+  "name": "webpack-koa-hot-reload",
   "version": "1.0.0",
   "description": "用webpack打包koa应用时，在开发阶段基于nodemon的热重载",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "repository": "https://github.com/ouyanggai/webpack-koa-hot-reload",
+  "homepage": "https://wwww.oygsky.com",
+  "files": ["dist","src","detect-port.d.ts","package.json","README.md","tsconfig.json"],
   "scripts": {
     "build": "tsc"
   },
