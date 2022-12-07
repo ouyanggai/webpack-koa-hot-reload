@@ -1,12 +1,24 @@
 {
   "name": "webpackkoahotreload",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "用webpack打包koa应用时，在开发阶段的热重载",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "ouyanggai",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "colors": "^1.4.0",
+    "detect-port": "^1.5.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.11"
+  }
 }
