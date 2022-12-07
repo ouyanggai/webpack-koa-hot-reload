@@ -2,7 +2,7 @@
  * @Author: oygsky
  * @Date: 2022-12-06 16:46:44
  * @LastEditors: oygsky
- * @LastEditTime: 2022-12-07 09:42:56
+ * @LastEditTime: 2022-12-07 11:54:34
  * @Description: 唧唧复唧唧
  * @FilePath: \WebpackKoaHotReload\src\index.ts
  */
@@ -58,25 +58,22 @@ class WebpackKoaHotReload implements WebpackPluginInstance{
       this.options = options
     }
     apply(compiler:Compiler){
-      const options = {
-        port: this.options ?? 8573,
-      }
       compiler.hooks.done.tap('WebpackKoaHotReload',()=>{
         if(!this.options.main){
           console.error(colors.red('******必须提供koa应用入口，请在插件调用时传递*********'))
           return 
         }
         //编译完成 启动api服务
-        detect(this.options.port).then((_port: number)=>{
+        detect(this.options.port??8573).then((_port: number)=>{
           if(this.options.port && this.options.port === _port){
-            console.log('你的koa服务已运行在:' + colors.blue.underline(`http://localhost:${this.options.port}`))
-            runCommand(`nodemon ${this.options.main} ${options.port}`,null)
+            console.log('你的koa服务已运行在:' + colors.blue.underline(`http://localhost:${this.options.port??8573}`))
+            runCommand(`nodemon --delay ${this.options.delay??0} ${this.options.main} ${this.options.port??8573}`,null)
           } else {
             console.log('你的koa服务已运行在:' + colors.blue.underline(`http://localhost:${_port}`))
-            runCommand(`nodemon ${this.options.main} ${_port}`,null)
+            runCommand(`nodemon --delay ${this.options.delay??0} ${this.options.main} ${_port}`,null)
           }
         }).catch((err: string)=>{
-          console.error(err.red)
+          console.error(colors.red(err))
         })
       })
     }
