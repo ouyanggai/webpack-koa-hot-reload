@@ -1,11 +1,3 @@
-/*
- * @Author: oygsky
- * @Date: 2022-12-06 16:46:44
- * @LastEditors: oygsky
- * @LastEditTime: 2022-12-07 11:54:34
- * @Description: 唧唧复唧唧
- * @FilePath: \WebpackKoaHotReload\src\index.ts
- */
 /**
  * @param {string} command process to run
  * @param {string[]} args command line arguments

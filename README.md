@@ -6,6 +6,7 @@
 对于我来说好像不适用，因为我需要webpack来打包ts代码 然后输出为node平台运行。其他的中间件需要在koa中编写代码，这不是我想要的 我想要的只是一个
 热重载，于是制作了这个小插件，如果你跟我一样希望使用webpack来打包koa应用 希望有热重载来方便开发 但又不想写侵入式代码 那就来试试吧
 
+
 ## 怎么使用
 
 打开你的webpack.config.js 我用的是 webpack.config.ts
@@ -33,7 +34,7 @@
   },
   plugins:[
     new WebpackKoaHotReload({
-      main:'/dist/index.js',
+      main: path.join(__dirname,'dist/index.js'),
       port:'3000',
     })
   ],
@@ -43,13 +44,7 @@
         test:/\.ts$/,
         use:'ts-loader',
         exclude:/node_modules/
-      },
-      {
-        test: /\.ts$/,
-        loader: 'lodash-ts-webpack-plugin',
-        exclude: /node_modules/,
-        enforce: 'pre'
-      },
+      }
     ]
   },
   resolve:{
