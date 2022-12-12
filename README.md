@@ -20,7 +20,7 @@
 1.webpack.config.ts
  
 ```js
-  import WebpackKoaHotReload from './webpack-koa-hot-reload';
+  import WebpackKoaHotReload from 'webpack-koa-hot-reload';
   
   
   const config: webpack.Configuration = {
