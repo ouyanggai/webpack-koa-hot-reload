@@ -1,6 +1,6 @@
 {
   "name": "webpack-koa-hot-reload",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "用webpack打包koa应用时，在开发阶段基于nodemon的热重载",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,10 +24,12 @@
     "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "detect-port": "^1.5.1",
+    "kill-port": "^2.0.1",
     "typescript": "^4.9.3",
     "webpack": "^5.75.0"
   },
   "devDependencies": {
+    "@types/kill-port": "^2.0.0",
     "@types/node": "^18.11.11"
   }
 }
