@@ -57,6 +57,7 @@ class WebpackKoaHotReload implements WebpackPluginInstance{
         }
         //编译完成 启动api服务
         detect(this.options.port??8573).then((_port: number)=>{
+          console.log('%c [ _port ]-60', 'font-size:13px; background:pink; color:#bf2c9f;', _port)
           if(this.options.port && this.options.port === _port){
             console.log('你的koa服务已运行在:' + colors.blue.underline(`http://localhost:${this.options.port??8573}`))
             const cmd = `nodemon ${this.options.main} ${this.options.port??8573}`
